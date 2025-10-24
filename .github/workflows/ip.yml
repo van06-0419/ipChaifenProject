@@ -39,7 +39,7 @@ jobs:
       - name: Run tests
         run: |
           cd build
-          ./ip_filter_test
+          ./iptest
 
       - name: Verify main program
         run: |
@@ -73,7 +73,7 @@ jobs:
       - name: Run tests
         run: |
           cd build/Release
-          .\ip_filter_test.exe
+          .\iptest.exe
 
       - name: Verify main program
         run: |

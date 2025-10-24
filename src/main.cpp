@@ -11,6 +11,7 @@ int main() {
         std::make_tuple(192, 168, 1, 2),
         std::make_tuple(1, 1, 1, 1),
         std::make_tuple(46, 70, 0, 1),
+        std::make_tuple(70, 46, 0, 1),
     };
 
     auto ips = test_ips;
@@ -29,3 +30,4 @@ int main() {
 
     return 0;
 }
+

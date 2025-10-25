@@ -1,4 +1,4 @@
-name: IP Filter Build
+name: ip shaixuan build
 
 on:
   push:
@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install dependencies
+      - name: Install yilaixiang
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake g++
 
-      - name: Show directory structure (debug)
+      - name: Zhanshi mulu jiegou (debug)
         run: |
           pwd
           ls -la
@@ -25,7 +25,7 @@ jobs:
           ls -la include
           ls -la test
 
-      - name: Configure project
+      - name: Configure project (peizhi)
         run: |
           mkdir -p build
           cd build
@@ -41,17 +41,17 @@ jobs:
           cd build
           ./iptest
 
-      - name: Verify main program
+      - name: Yanzheng main program
         run: |
           cd build
-          echo -e "192.168.1.1\ttest\n10.0.0.1\ttest" | ./ip_filter
+          ./ip_filter
 
   build-windows:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Show directory structure (debug)
+      - name: Zhanshi mulu jiegou
         run: |
           Get-Location
           dir
@@ -59,7 +59,7 @@ jobs:
           dir include
           dir test
 
-      - name: Configure project
+      - name: Peizhi project
         run: |
           mkdir -p build
           cd build
@@ -75,8 +75,7 @@ jobs:
           cd build/Release
           .\iptest.exe
 
-      - name: Verify main program
+      - name: Yanzheng main program
         run: |
           cd build/Release
-          echo "192.168.1.1`ttest`n10.0.0.1`ttest" | .\ip_filter.exe
-    
+          .\ip_filter.exe

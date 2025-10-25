@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <tuple>
+#include <sstream>
 
 int main() {
     std::vector<std::tuple<int, int, int, int>> test_ips = {
@@ -19,6 +20,17 @@ int main() {
     std::cout << "Все IP-адреса:\n";
     print_ips(ips);
 
+    std::stringstream ss;
+    for (const auto& ip : ips) {
+    ss << std::get<0>(ip) << "."
+        << std::get<1>(ip) << "."
+        << std::get<2>(ip) << "."
+        << std::get<3>(ip) << "\n";
+    }
+    auto sorted_ips = duqu_and_jaingxu_ip(ss);
+    std::cout << "\nВсе IP-адреса после сортировки (по убыванию):\n";
+    print_ips(sorted_ips);
+
     std::cout << "\nIP-адреса, где первый байт равен 1:\n";
     print_ips(diyidyValue(ips, 1));
 
@@ -30,4 +42,5 @@ int main() {
 
     return 0;
 }
+
 
